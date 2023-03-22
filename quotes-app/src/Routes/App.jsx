@@ -38,12 +38,17 @@ const App = () => {
         console.error(err);
       });
   }, []);
+  const rand = Math.floor(Math.random() * quotes.length)
   function handleNext() {
     setLoader(true);
     setTimeout(() => {
       setLoader(false);
-      setCurrQuote((prev) => (prev + 1) % quotes.length);
+      setCurrQuote((prev) => (rand));
     }, Math.floor(Math.random() * 900));
+    // setTimeout(() => {
+    //   setLoader(false);
+    //   setCurrQuote((prev) => (prev + 1) % quotes.length);
+    // }, Math.floor(Math.random() * 900));
   }
 
   function handlePrev() {
